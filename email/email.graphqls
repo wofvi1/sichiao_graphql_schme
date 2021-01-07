@@ -1,0 +1,17 @@
+extend type Mutation {
+    #获取邮箱验证码
+    getEmailVerificationCode(user:EmailerificationCodeInput!): Boolean
+}
+
+input EmailRegisterUserInput{
+    #用户邮箱
+    email: String
+    #用户密码
+    password:String
+    #邮箱验证码
+    verificationCode:String!
+}
+input EmailerificationCodeInput{
+    #用户邮箱
+    email: String
+}

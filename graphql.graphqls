@@ -1,0 +1,10 @@
+type Query {
+    # hello！！！！！！！！！！
+    hello:String
+}
+
+type Mutation{
+    # hello！！！！！！！！！！
+    hello:String
+}
+

@@ -1,0 +1,4 @@
+type Responder{
+    code:Int
+    message:String
+}

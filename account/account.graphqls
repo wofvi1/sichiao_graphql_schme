@@ -1,0 +1,121 @@
+extend type Mutation {
+    #登录，username可以使用email或者phone number
+    login(loginUser:LoginUser!,userInfo:UserInfo,wechatEncryptedUserInfo:WechatEncryptedUserInfo):User!
+    #使用邮箱注册
+    emailRegister(registerUser:EmailRegisterUserInput!):User!
+}
+extend type Query {
+    #获取用户可公开信息
+    user(userInfo:QueryUserInfoUser!):User!
+}
+#用户
+type User{
+    #用户ID
+    id: ID
+    #思潮号
+    sichiaoCode:String
+    #曾用思潮号
+    formerSichiaoCode:String
+    #用户昵称
+    nickName:String
+    #用户邮箱
+    email: String
+    #用户电话号码
+    phone:String
+    #个性签名
+    personalSignature:String
+    #头像链接
+    avatarUrl:String
+    #性别
+    gender :String
+    #情感状态
+    emotionState :Int
+    #大学
+    university:String
+    #专业
+    professional :String
+    #语言
+    language :String
+    #城市
+    city :String
+    #省份
+    province :String
+    #国家
+    country :String
+    #角色
+    role:Int
+    #经验值
+    experience :String
+    #账户状态
+    accountStatus:Int
+    #创建时间
+    createTime:String
+    #设置
+    setting:String
+    #设置
+    token:String
+}
+type PublicUser{
+    #用户ID
+    id: ID
+    #用户昵称
+    nickName:String
+    #个性签名
+    personalSignature:String
+    #头像链接
+    avatarUrl:String
+    #性别
+    gender :String
+    #经验值
+    experience :String
+    #账户状态
+    accountStatus:Int
+}
+#登录/获取验证码用户
+input UserInfo{
+    #用户昵称
+    nickName:String
+    #头像链接
+    avatarUrl:String
+    #性别
+    gender :String
+    #语言
+    language :String
+    #城市
+    city :String
+    #省份
+    province :String
+    #国家
+    country :String
+    #账户状态
+    accountStatus:Int
+}
+input WechatEncryptedUserInfo{
+    #？？？
+    signature:String
+    #加密的数据
+    encryptedData:String
+    #加密算法的初始向量
+    iv:String
+}
+input LoginUser{
+    #用户邮箱
+    email: String
+    #用户电话号码
+    phone:String
+    #密码
+    password:String
+    #微信小程序登录码
+    wechatMiniProgramCode:String
+}
+#用户信息查询Input
+input QueryUserInfoUser{
+    #用户ID
+    id:ID
+    #账户名
+    email:String
+    #用户密码
+    phone_nmber:String
+
+}
+
