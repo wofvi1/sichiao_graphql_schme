@@ -52,7 +52,7 @@ type User{
     createTime:String
     #设置
     setting:String
-    #设置
+    #token
     token:String
 }
 type PublicUser{
