@@ -1,4 +1,6 @@
 type Responder{
+    #回复状态码
     code:Int
+    #回复信息
     message:String
 }
